@@ -4,16 +4,16 @@ import torchvision
 from multiprocessing import freeze_support
 
 # Check if CUDA GPU is available
-if torch.cuda.is_available():
-    device = torch.device('cuda')
-    print('Running on GPU')
-else:
-    device = torch.device('cpu')
-    print('Running on CPU')
+
 
 if __name__ == '__main__':
     freeze_support()
-
+    if torch.cuda.is_available():
+        device = torch.device('cuda')
+        print('Running on GPU')
+    else:
+        device = torch.device('cpu')
+        print('Running on CPU')
     print(torchvision.__version__)
 
     input('Press ENTER to start training...')
