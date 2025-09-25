@@ -16,9 +16,6 @@ if __name__ == '__main__':
         print('Running on CPU')
     print(torchvision.__version__)
 
-    input('Press ENTER to start training...')
-
-    # Load a model
     model = YOLO('yolov8n.yaml').to(device)
 
     # Train the model
