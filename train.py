@@ -19,5 +19,5 @@ if __name__ == '__main__':
     model = YOLO('yolov8n.yaml').to(device)
 
     # Train the model
-    results = model.train(data='dataset\data.yaml', epochs=100, device=0, batch=-1)
+    results = model.train(data=r'/kaggle/working/Valorant-Object-Detection/dataset/data.yaml', epochs=100, device=0, batch=-1)
     model.export(format="TensorRT", dynamic=True)
